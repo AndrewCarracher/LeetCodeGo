@@ -7,14 +7,15 @@ func TestDataSetOne(t *testing.T) {
 	var testData []int
 	var expectedResult []int
 	testData = append(testData, 2, 7, 11, 15)
-	expectedResult = append(expectedResult, 0, 1)
+	// expectedResult = append(expectedResult, 0, 1)
+	expectedResult = append(expectedResult, 0, 2)
 
 	// Act
 	result := twoSum(testData, 9)
 
 	// Assert
 	if result[0] != expectedResult[0] || result[1] != expectedResult[1] {
-		t.Errorf(`Expected: %q, Recieved: %v`, expectedResult, result)
+		t.Errorf(`Expected: %v, Recieved: %v`, expectedResult, result)
 	}
 }
 
@@ -30,7 +31,7 @@ func TestDataSetTwo(t *testing.T) {
 
 	// Assert
 	if result[0] != expectedResult[0] || result[1] != expectedResult[1] {
-		t.Errorf(`Expected: %q, Recieved: %v`, expectedResult, result)
+		t.Errorf(`Expected: %v, Recieved: %v`, expectedResult, result)
 	}
 }
 
@@ -46,6 +47,6 @@ func TestDataSetThree(t *testing.T) {
 
 	// Assert
 	if result[0] != expectedResult[0] || result[1] != expectedResult[1] {
-		t.Errorf(`Expected: %q, Recieved: %v`, expectedResult, result)
+		t.Errorf(`Expected: %v, Recieved: %v`, expectedResult, result)
 	}
 }
