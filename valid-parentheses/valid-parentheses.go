@@ -20,12 +20,14 @@ func isValid(s string) bool {
 		if s[i] == '{' || s[i] == '[' || s[i] == '(' {
 			openParenthesesOrder = append(openParenthesesOrder, s[i])
 		} else {
-			if len(openParenthesesOrder) == 0 || len(openParenthesesOrder) > (len(s)-i) {
+			orderLength := len(openParenthesesOrder)
+
+			if orderLength == 0 || orderLength > (strLength-i) {
 				return false
 			}
 
-			if parenthesesMap[openParenthesesOrder[len(openParenthesesOrder)-1]] == s[i] {
-				openParenthesesOrder = openParenthesesOrder[:len(openParenthesesOrder)-1]
+			if parenthesesMap[openParenthesesOrder[orderLength-1]] == s[i] {
+				openParenthesesOrder = openParenthesesOrder[:orderLength-1]
 			} else {
 				return false
 			}
