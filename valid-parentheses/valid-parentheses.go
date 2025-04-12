@@ -32,9 +32,5 @@ func isValid(s string) bool {
 		}
 	}
 
-	if len(openParenthesesOrder) != 0 {
-		return false
-	}
-
-	return true
+	return len(openParenthesesOrder) == 0
 }
